@@ -1,0 +1,35 @@
+React es una libreria de javascript creada y mantenida por facebook
+
+Unicamente para FrontEnd, es decir que la parte interactiva de la página
+o aplicación con la que el usuario trabaja
+
+El objetivo es crear aplicaciones SPA de gran escala 
+SPA single page aplication
+
+MPA multi-page aplication
+
+JSX:
+No es un lenguaje es una extensi[on] de React 
+para javascript.
+
+Permite extructurar sus componentes usando
+una sintaxis mas agradable
+Mezcla lenguajes de JavaScript y HTML(XML)
+
+Transipirador que usa react BabelJS
+
+
+Instalación de react
+
+comando:
+                -g: instalacion local
+    npm install -g create-react-app
+
+Crear el proyecto
+    npx create-react-app react-ejemplo-1
+
+    para entrar al proyecto y ejecutarlo
+
+    cd react-ejemplo-1
+
+    npm start react-ejemplo-1

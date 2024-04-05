@@ -1,0 +1,6 @@
+Para crear un proyecto con react y vite
+
+npm create vite@latest Contador
+
+useState = hook para manejo de estados
+
