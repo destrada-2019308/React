@@ -1,9 +1,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { registerRequest } from "../../services/api.js";
+import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate()
 
     const register = async(email, username, password) =>{
         setIsLoading(true);
@@ -18,13 +20,22 @@ export const useRegister = () => {
         setIsLoading(false);
         
         if(response.error){
-            return toast.error(
-                //? para parametros opcionales
-                response?.e?.response?.date ||
-                'Error general al intentar registrar el usuario. Intenta de nuevo.'
-            )
+            //? para parametros opcionales
+            if(response?.err?.response?.data?.errors){
+                let arr = response?.err?.response?.data?.errors
+                for (const error of arr) {
+                  return toast.error(
+                    error.msg
+                  )
+                }
+              }
+                return toast.error(
+                    response?.err?.response?.data?.msg ||
+                    response?.err?.data?.msg ||
+                    'Error general al intentar registrar el usuario. Intenta de nuevo.'
+                )
         }
-        console.log(response);
+        navigate('/channels')
     }
   return {
     register, 

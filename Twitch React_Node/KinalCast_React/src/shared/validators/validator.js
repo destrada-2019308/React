@@ -10,7 +10,7 @@ export const emailValidationMessage = 'Por favor ingresa un correo válido';
 /* VALIDACION DE NOMBRE DE USUARIO */
 
 export const validateUsername = (username) =>{
-    const regex = /^\S{3,8}$/;
+    const regex = /^\S{3,12}$/;
     return regex.test(username);
 }
 

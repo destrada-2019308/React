@@ -54,9 +54,14 @@ export const Login = ({ SwitchAuthAndler }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (formData.email.isValid && formData.password.isValid) {
+    //e.target.name.resert()
+    /*if (formData.email.isValid && formData.password.isValid) {
       login(formData.email.value, formData.password.value);
-    }
+    }*/
+    login(
+        formData.email.value,
+        formData.password.value
+    )
   };
 
   return (
