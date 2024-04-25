@@ -2,7 +2,11 @@ import { Route, Routes } from "react-router-dom"
 import { ChannelView } from '../channel/ChannelView.jsx'
 import { Channels } from '../channel/Channels.jsx'
 
-export const DashboardContent = ({ channels, getChannels }) => {
+// codigo mamentaneo
+const channels =[]
+
+
+export const DashboardContent = ({ getChannels }) => {
   return (
     <div className="content-container">
         <Routes>

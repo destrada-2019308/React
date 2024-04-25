@@ -23,3 +23,25 @@ export const loginRequest = async(user)=>{
         }
     }
 }
+
+export const getChannelsRequest = async() => {
+    try {
+        return await apiClient.get('/channels')
+    } catch (err) {
+        return{
+            error: true,
+            err
+        }
+    }
+}
+
+export const getFollowedChannelsIsRequest = async() => {
+    try {
+        return await apiClient.get('/channels/followed');
+    } catch (err) {
+        return{
+            error: true,
+            err
+        }
+    }
+}

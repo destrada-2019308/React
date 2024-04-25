@@ -19,13 +19,17 @@ export const Navbar = () => {
         logoutSys()
     }
 
+    const handleNavigateToLogin = () =>{
+        navigate('/auth')
+    }
+
   return (
     <div className="nav-container">
         <div className="nav-buttons-container">
             <NavButton text='Browse'/>
             {
                 !isLogged ?(
-                    <NavButton  text='Login'/>
+                    <NavButton  text='Login' onClickHandler={handleNavigateToLogin}/>
                 ) : (
                     <div>
                         <NavButton text='Acount'/>

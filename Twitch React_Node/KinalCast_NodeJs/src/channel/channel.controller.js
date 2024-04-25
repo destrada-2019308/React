@@ -14,9 +14,9 @@ export const getChannelDetails = async (req, res) => {
 
     const user = await User.findOne({ channel: channelId }, { username: 1 });
 
-    const streamUrl = `http://127.0.0.1:8000/live/${channel.streamKey}.flv`;
+    const streamUrl = `http://127.0.0.1:80/live/${channel.streamKey}.flv`;
 
-    const requestData = await axios.get("http://127.0.0.1:8000/api/streams");
+    const requestData = await axios.get("http://127.0.0.1:80/api/streams");
 
     const activeStreams = requestData.data;
 
@@ -59,7 +59,7 @@ export const getChannels = async (req, res) => {
       }
     ).populate("channel");
 
-    const requestData = await axios.get("http://127.0.0.1:8000/api/streams");
+    const requestData = await axios.get("http://127.0.0.1:80/api/streams");
 
     const activeStreams = requestData.data;
 
