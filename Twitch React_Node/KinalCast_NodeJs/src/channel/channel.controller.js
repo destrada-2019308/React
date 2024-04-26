@@ -2,6 +2,8 @@ import axios from "axios";
 import User from "../users/user.model.js";
 import Channel from "./channel.model.js";
 
+const urlRtmp = 'http://127.0.0.1:80'
+
 export const getChannelDetails = async (req, res) => {
   try {
     const { channelId } = req.params;
@@ -14,9 +16,9 @@ export const getChannelDetails = async (req, res) => {
 
     const user = await User.findOne({ channel: channelId }, { username: 1 });
 
-    const streamUrl = `http://127.0.0.1:80/live/${channel.streamKey}.flv`;
+    const streamUrl = `${urlRtmp}/live/${channel.streamKey}.flv`;
 
-    const requestData = await axios.get("http://127.0.0.1:80/api/streams");
+    const requestData = await axios.get(`${urlRtmp}/api/streams`);
 
     const activeStreams = requestData.data;
 
@@ -59,7 +61,7 @@ export const getChannels = async (req, res) => {
       }
     ).populate("channel");
 
-    const requestData = await axios.get("http://127.0.0.1:80/api/streams");
+    const requestData = await axios.get(`${urlRtmp}/api/streams`);
 
     const activeStreams = requestData.data;
 

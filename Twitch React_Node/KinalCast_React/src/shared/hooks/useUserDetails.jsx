@@ -1,8 +1,7 @@
 import { useState } from "react"
-import { useLogout } from "./useLogout"
+import { useLogout as logOut} from "./useLogout.jsx"
 
 const getUserDetails = () =>{
-    const logOut = useLogout()
     const userDetails = localStorage.getItem('user')
     if(userDetails) return JSON.parse(userDetails)
     return null

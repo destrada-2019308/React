@@ -3,7 +3,7 @@ import { Input } from "./Input.jsx";
 import { useLogin } from "../shared/hooks/useLogin.jsx";
 import { emailValidationMessage, passwordValidationMessage, validateEmail, validatePassword } from '../shared/validators/validator.js';
 
-export const Login = ({ SwitchAuthAndler }) => {
+export const Login = ({ switchAuthAndler }) => {
   const { login, isLoading } = useLogin();
   const [formData, setFormData] = useState({
     email: {
@@ -89,7 +89,7 @@ export const Login = ({ SwitchAuthAndler }) => {
         />
         <button disabled={isSubmitButtonDisable}>LOGIN</button>
       </form>
-      <span onClick={SwitchAuthAndler}>
+      <span onClick={switchAuthAndler} className='auth-form-switch-label'>
         ¿No tienes una cuenta? ¡Crea una acá!
       </span>
     </div>

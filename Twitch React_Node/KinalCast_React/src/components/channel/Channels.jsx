@@ -1,6 +1,6 @@
 import { ChannelCard } from "./ChannelCard.jsx"
 
-export const Channels = ({channels}) => {
+export const Channels = ({channels =[]}) => {
   return (
     <div className="channels-container">
       {

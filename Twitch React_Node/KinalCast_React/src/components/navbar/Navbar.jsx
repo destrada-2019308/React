@@ -12,7 +12,7 @@ const NavButton = ({ text, onClickHandler}) =>{
 
 export const Navbar = () => {
     
-    const [isLogged, logoutSys] = useUserDetails()
+    const {isLogged, logoutSys} = useUserDetails()
     const navigate = useNavigate()
 
     const handleLogout = () =>{
