@@ -16,12 +16,18 @@ export const ChannelCard = ({
   avatarUrl,
   navigateToChannelHandler
 }) => {
+  const handleNavigateToChannel = () =>{
+    navigateToChannelHandler(id)
+  }
+
   return (
-    <div className="channel-card">
+    <div className="channel-card" onClick={handleNavigateToChannel}>
       <ChannelAvatar url={imageUrl}/>
       <span className="channels-card-tittle">{tittle}</span>
       <span className="channels-card-tittle">{username}</span>
-      <span className="channels-card-tittle" style={{color: isOnline ? 'green' : 'red'}}>{isOnline ? 'Online' : 'Offline'}</span>
+      <span className="channels-card-tittle" style={{color: isOnline ? 'green' : 'red'}}>
+        {isOnline ? 'Online' : 'Offline'}
+      </span>
     </div>
   )
 }

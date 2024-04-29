@@ -23,16 +23,24 @@ export const Navbar = () => {
         navigate('/auth')
     }
 
+    const handleNavigateToSettings = () => {
+        navigate('/settings')
+    }
+
+    const handleNavigateToChannels = () =>{
+        navigate('/channels')
+    }
+
   return (
     <div className="nav-container">
         <div className="nav-buttons-container">
-            <NavButton text='Browse'/>
+            <NavButton text='Browse' onClickHandler={handleNavigateToChannels}/>
             {
                 !isLogged ?(
                     <NavButton  text='Login' onClickHandler={handleNavigateToLogin}/>
                 ) : (
                     <div>
-                        <NavButton text='Acount'/>
+                        <NavButton text='Acount' onClickHandler={handleNavigateToSettings}/>
                         <NavButton text='LogOut' onClickHandler={handleLogout}/>  
                     </div> 
                 )

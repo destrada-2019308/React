@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Input } from './Input.jsx'
-import { emailValidationMessage, usernmaeValidationMessage, validateEmail, validateUsername, passwordValidationMessage, validatePassword, passwordConfirmValidationMessage, validatePasswordConfirm } from "../shared/validators/validator.js";
+import { emailValidationMessage, 
+    passConfirmValidationMessage, 
+    passwordValidationMessage, 
+    usernameValidationMessage, 
+    validateEmail, 
+    validatePassConfirm, 
+    validatePassword, 
+    validateUsername } from "../shared/validators/validator.js";
 import { useRegister } from "../shared/hooks/useRegister.jsx";
 
 export const Register = ({switchAuthAndler}) => {
